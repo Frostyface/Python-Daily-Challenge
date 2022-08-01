@@ -19,7 +19,12 @@ guesses = 0
 
 while True:
 
-    guess = int(input("Enter a number between 1 and 9: "))
+    guess = input("Enter a number between 1 and 9: ")
+
+    if guess == "exit":
+        break
+    else:
+        guess = int(guess)
 
     if guess > rand:
         print("Guess is less than the number")
@@ -30,6 +35,7 @@ while True:
     elif guess == rand:
         guesses += 1
         print("Congrats! You found the number in " + str(guesses) + " guesses!")
+        break
     else:
         print("Unexpected input....")
 
